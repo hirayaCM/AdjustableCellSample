@@ -10,11 +10,11 @@
 		C949D4AE1AA823AB002A6D24 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C949D4AD1AA823AB002A6D24 /* main.m */; };
 		C949D4B11AA823AB002A6D24 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C949D4B01AA823AB002A6D24 /* AppDelegate.m */; };
 		C949D4B41AA823AB002A6D24 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C949D4B31AA823AB002A6D24 /* MasterViewController.m */; };
-		C949D4B71AA823AB002A6D24 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C949D4B61AA823AB002A6D24 /* DetailViewController.m */; };
 		C949D4BA1AA823AB002A6D24 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C949D4B81AA823AB002A6D24 /* Main.storyboard */; };
 		C949D4BC1AA823AB002A6D24 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C949D4BB1AA823AB002A6D24 /* Images.xcassets */; };
 		C949D4BF1AA823AB002A6D24 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C949D4BD1AA823AB002A6D24 /* LaunchScreen.xib */; };
 		C949D4CB1AA823AB002A6D24 /* AdjustableCellSampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C949D4CA1AA823AB002A6D24 /* AdjustableCellSampleTests.m */; };
+		C949D4D91AA825D2002A6D24 /* CustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C949D4D81AA825D2002A6D24 /* CustomCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,14 +35,14 @@
 		C949D4B01AA823AB002A6D24 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		C949D4B21AA823AB002A6D24 /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
 		C949D4B31AA823AB002A6D24 /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
-		C949D4B51AA823AB002A6D24 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
-		C949D4B61AA823AB002A6D24 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		C949D4B91AA823AB002A6D24 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C949D4BB1AA823AB002A6D24 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		C949D4BE1AA823AB002A6D24 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		C949D4C41AA823AB002A6D24 /* AdjustableCellSampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AdjustableCellSampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C949D4C91AA823AB002A6D24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C949D4CA1AA823AB002A6D24 /* AdjustableCellSampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AdjustableCellSampleTests.m; sourceTree = "<group>"; };
+		C949D4D71AA825D2002A6D24 /* CustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCell.h; sourceTree = "<group>"; };
+		C949D4D81AA825D2002A6D24 /* CustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,8 +88,8 @@
 				C949D4B01AA823AB002A6D24 /* AppDelegate.m */,
 				C949D4B21AA823AB002A6D24 /* MasterViewController.h */,
 				C949D4B31AA823AB002A6D24 /* MasterViewController.m */,
-				C949D4B51AA823AB002A6D24 /* DetailViewController.h */,
-				C949D4B61AA823AB002A6D24 /* DetailViewController.m */,
+				C949D4D71AA825D2002A6D24 /* CustomCell.h */,
+				C949D4D81AA825D2002A6D24 /* CustomCell.m */,
 				C949D4B81AA823AB002A6D24 /* Main.storyboard */,
 				C949D4BB1AA823AB002A6D24 /* Images.xcassets */,
 				C949D4BD1AA823AB002A6D24 /* LaunchScreen.xib */,
@@ -227,7 +227,7 @@
 				C949D4B11AA823AB002A6D24 /* AppDelegate.m in Sources */,
 				C949D4B41AA823AB002A6D24 /* MasterViewController.m in Sources */,
 				C949D4AE1AA823AB002A6D24 /* main.m in Sources */,
-				C949D4B71AA823AB002A6D24 /* DetailViewController.m in Sources */,
+				C949D4D91AA825D2002A6D24 /* CustomCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,6 +418,7 @@
 				C949D4D01AA823AB002A6D24 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C949D4D11AA823AB002A6D24 /* Build configuration list for PBXNativeTarget "AdjustableCellSampleTests" */ = {
 			isa = XCConfigurationList;
@@ -426,6 +427,7 @@
 				C949D4D31AA823AB002A6D24 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
