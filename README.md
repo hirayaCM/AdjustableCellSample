@@ -1,0 +1,2 @@
+# AdjustableCellSample
+Autolayout usage example
