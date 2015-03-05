@@ -1,2 +1,3 @@
 # AdjustableCellSample
-Autolayout usage example
+- Autolayout usage example
+- Deployment Target : iOS 8
