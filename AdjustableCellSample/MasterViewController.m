@@ -69,9 +69,7 @@
     CustomCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
 
     NSDictionary *data = self.objects[indexPath.row];
-    cell.nameLabel.text = data[@"name"];
-    cell.dateLabel.text = data[@"date"];
-    cell.contentLabel.text = data[@"content"];
+    cell.data = data;
     
     return cell;
 }
@@ -99,7 +97,12 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return UITableViewAutomaticDimension;
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] < 8.0) {
+        NSDictionary *data = self.objects[indexPath.row];
+        return [CustomCell heightForRowWithTableView:tableView data:data cellIdentifier:@"Cell"];
+    } else {
+        return UITableViewAutomaticDimension;
+    }
 }
 
 #pragma mark -  methods
@@ -152,4 +155,5 @@
     }
     return _dataList;
 }
+
 @end

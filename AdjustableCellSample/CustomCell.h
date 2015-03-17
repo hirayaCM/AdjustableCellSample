@@ -10,10 +10,10 @@
 
 @interface CustomCell : UITableViewCell
 
-@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (nonatomic) NSDictionary *data;
 
-@property (weak, nonatomic) IBOutlet UILabel *dateLabel;
-
-@property (weak, nonatomic) IBOutlet UILabel *contentLabel;
++ (CGFloat)heightForRowWithTableView:(UITableView *)tableView
+                                data:(NSDictionary *)data
+                      cellIdentifier:(NSString *)cellIdentifier;
 
 @end

@@ -8,6 +8,14 @@
 
 #import "CustomCell.h"
 
+@interface CustomCell ()
+
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *dateLabel;
+@property (weak, nonatomic) IBOutlet UILabel *contentLabel;
+
+@end
+
 @implementation CustomCell
 
 - (void)awakeFromNib {
@@ -18,6 +26,41 @@
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
+}
+
+- (void)setData:(NSDictionary *)data
+{
+    _data = data;
+    
+    self.nameLabel.text = data[@"name"];
+    self.dateLabel.text = data[@"date"];
+    self.contentLabel.text = data[@"content"];
+    
+    [self layoutIfNeeded];
+}
+
+- (void)layoutSubviews
+{
+    [super layoutSubviews];
+    
+    self.contentLabel.preferredMaxLayoutWidth = CGRectGetWidth(self.contentLabel.bounds);
+}
+
++ (CGFloat)heightForRowWithTableView:(UITableView *)tableView
+                                data:(NSDictionary *)data
+                      cellIdentifier:(NSString *)cellIdentifier
+{
+    static CustomCell *sizingCell = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        sizingCell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    });
+    
+    sizingCell.data = data;
+    
+    CGSize size = [sizingCell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
+    
+    return size.height + 1.0f;
 }
 
 @end
