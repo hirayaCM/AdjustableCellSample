@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CustomCell : UITableViewCell
+@interface Lesson1Cell : UITableViewCell
 
 @property (nonatomic) NSDictionary *data;
 

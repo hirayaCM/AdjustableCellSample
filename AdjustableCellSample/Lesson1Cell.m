@@ -6,9 +6,9 @@
 //  Copyright (c) 2015年 hiraya.shingo. All rights reserved.
 //
 
-#import "CustomCell.h"
+#import "Lesson1Cell.h"
 
-@interface CustomCell ()
+@interface Lesson1Cell ()
 
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
@@ -16,7 +16,7 @@
 
 @end
 
-@implementation CustomCell
+@implementation Lesson1Cell
 
 - (void)awakeFromNib {
     // Initialization code
@@ -50,7 +50,7 @@
                                 data:(NSDictionary *)data
                       cellIdentifier:(NSString *)cellIdentifier
 {
-    static CustomCell *sizingCell = nil;
+    static Lesson1Cell *sizingCell = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         sizingCell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];

@@ -6,10 +6,10 @@
 //  Copyright (c) 2015年 hiraya.shingo. All rights reserved.
 //
 
-#import "MasterViewController.h"
-#import "CustomCell.h"
+#import "Lesson1ViewController.h"
+#import "Lesson1Cell.h"
 
-@interface MasterViewController ()
+@interface Lesson1ViewController ()
 
 @property NSMutableArray *objects;
 
@@ -17,12 +17,7 @@
 
 @end
 
-@implementation MasterViewController
-
-- (void)awakeFromNib
-{
-    [super awakeFromNib];
-}
+@implementation Lesson1ViewController
 
 - (void)viewDidLoad
 {
@@ -44,13 +39,10 @@
         self.objects = [[NSMutableArray alloc] init];
     }
     
-    // 追加
-    // データ作成
     int dataIndex = arc4random() % self.dataList.count;
     NSDictionary *data = self.dataList[dataIndex];
     
-    // データ挿入
-    [_objects insertObject:data atIndex:0];   // 修正
+    [_objects insertObject:data atIndex:0];
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
     [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
 }
@@ -66,7 +58,7 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    CustomCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    Lesson1Cell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
 
     NSDictionary *data = self.objects[indexPath.row];
     cell.data = data;
@@ -74,8 +66,8 @@
     return cell;
 }
 
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+{
     return YES;
 }
 
@@ -83,8 +75,6 @@
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         [self.objects removeObjectAtIndex:indexPath.row];
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
     }
 }
 
@@ -99,7 +89,7 @@
 {
     if ([[[UIDevice currentDevice] systemVersion] floatValue] < 8.0) {
         NSDictionary *data = self.objects[indexPath.row];
-        return [CustomCell heightForRowWithTableView:tableView data:data cellIdentifier:@"Cell"];
+        return [Lesson1Cell heightForRowWithTableView:tableView data:data cellIdentifier:@"Cell"];
     } else {
         return UITableViewAutomaticDimension;
     }
@@ -112,44 +102,44 @@
     if (!_dataList) {
         _dataList = @[
                       @{
-                          @"name":@"iPhone OS 1.0",
+                          @"name":@"iPhone OS",
                           @"date":@"2007年6月29日",
-                          @"content":@"最初のリリースバージョン。",
+                          @"content":@"この当時、日本ではガラケー全盛の時代でした。また初代iPhoneは、日本で発売されるわけではないのでよっぽどのガジェット好きじゃないと手に入れられない商品でした。",
                           },
                       @{
-                          @"name":@"iPhone OS 2.0",
+                          @"name":@"iPhone OS 2",
                           @"date":@"2008年7月11日",
-                          @"content":@"アップデートはiPhoneとiPod touch（バージョン2）が無料、iPod touch（バージョン1）からは1200円の有償。",
+                          @"content":@"AppStoreが提供されはじめました。",
                           },
                       @{
                           @"name":@"iPhone OS 3.0",
                           @"date":@"2009年6月17日",
-                          @"content":@"アップデートはiPhoneからは無料、iPod touchからは1200円かかる。",
+                          @"content":@"iPhone3Gの後継である、iPhone3GSに搭載されたOSになります。日本で爆発的にiPhoneが流行したのもこの時期からになります。",
                           },
                       @{
                           @"name":@"iOS 4",
                           @"date":@"2010年6月21日",
-                          @"content":@"iPhone 4に標準搭載され、アップデートはiPhone 3Gと3GS、ならびに第2世代以降のiPod touch用向けにリリースされた。ただしiPhone 3Gと第2世代iPod touchでは一部の機能に制限がある。アップグレードはiPhone・iPod touchともにバージョンを問わず無料",
+                          @"content":@"iOS 4の一番大きな点としてはマルチタスクになったということです。",
                           },
                       @{
                           @"name":@"iOS 5",
                           @"date":@"2011年10月12日",
-                          @"content":@"200以上の新機能が追加された。",
+                          @"content":@"iOS 5からついにiTunesを利用せずに本体のみでアップデートできることが可能になりました。また音声認識アシスタントのSirが搭載され、Siriにくだらない質問をするユーザーがいた事も記憶にあたらしいです。\n\n主な特徴\n- Siri\n- 通知センター\n- iCloudと連携\n- iTunesを経由せず直接アップデート可能\n- Twitter連携\n- 緊急地震速報への対応",
                           },
                       @{
                           @"name":@"iOS 6",
                           @"date":@"2012年9月19日",
-                          @"content":@"約200以上の新機能が搭載され、今回のアップデートではアプリの追加よりも既存のアプリの改良や新機能が中心となり、GUIにも変更が見られる。",
+                          @"content":@"iOS 6といえば、これまで地図情報にGoogle Mapsを使っていたのを自社開発に変更したことが大きいと思います。それにより「パチンコガンダム駅」のような事態になってしまい、5からのアップデートに躊躇するユーザーも沢山いました。",
                           },
                       @{
                           @"name":@"iOS 7",
                           @"date":@"2013年9月18日",
-                          @"content":@"これまでのバージョンから大幅にデザインが変更された。",
+                          @"content":@"iOS 7の特徴といえば、なんといっても今までのスキュモーフィズムからフラットデザインへの変更でしょう。また、今まで設定画面からしかできなかったWi-Fiの切り替えがコントロールセンターから行えるようになり、より便利になりました。",
                           },
                       @{
                           @"name":@"iOS 8",
                           @"date":@"2014年9月17日",
-                          @"content":@"対応端末は iPhone 4s以降、iPad 2以降、iPad mini第1世代以降、iPod touch 第5世代。このバージョンで、iPhone 4がサポートから外れる。デザイン面では変更は無いものの、アプリや各種機能の強化、サードパーティの開発者向けに多くのAPIの開放を実施したことが大きな特徴となっている。リリース当初はバグが多く、動作も特に旧機種を中心に重くなるという事態が続発した。アップルはそれらを改善するために8.0.1、8.0.2、と立て続けにリリースし、その後、バージョン8.1がリリースされた。",
+                          @"content":@"連携機能や共有機能をより強化し、全世界AppleユーザーにしようとしているAppleの意気込みが伺えます。\n\n主な特徴\n- ファミリー共有機能\n- iCloud Driveとの連携\n- Macとの連携\n- HealthKit、HomeKit",
                           },
                       ];
     }
